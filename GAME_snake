@@ -62,3 +62,12 @@ INSTRUCTION_TEXT = [
     "Удачи в игре! И помни, что",
     "каждая змейка мечтает стать Python =)"
 ]
+class GameObject:
+    """Основной класс,который предостовляе фигуры в игре"""
+
+    def __init__(self, body_color=WHITE):
+        self.body_color = body_color
+        self.position = None
+
+    def draw(self):
+        """Отрисовка фигур с переопределением в наследуемых классах"""
