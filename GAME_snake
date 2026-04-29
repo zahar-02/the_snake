@@ -81,3 +81,12 @@ class GameObject:
 
         pg.draw.rect(screen, color, (x * GRID_SIZE, y * GRID_SIZE,
                                      GRID_SIZE, GRID_SIZE))
+class Snake(GameObject):
+    """Наследуемый класс от GameObject."""
+
+    def __init__(self):
+        super().__init__(DARK_GREEN)
+# вызываем конструктор
+        self.positions = [(GRID_WIDTH // 2, GRID_HEIGHT // 2)]
+        self.direction = random.choice([UP, DOWN, LEFT, RIGHT])
+        self.grow = False
