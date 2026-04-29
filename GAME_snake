@@ -71,3 +71,11 @@ class GameObject:
 
     def draw(self):
         """Отрисовка фигур с переопределением в наследуемых классах"""
+# пока этот метод пустой
+
+ def draw_cell(self, position, color=None):
+        """Метод для рисования клетки."""
+        x, y = position
+        color = color or self.body_color
+        pg.draw.rect(screen, color, (x * GRID_SIZE, y * GRID_SIZE,
+                                     GRID_SIZE, GRID_SIZE))
