@@ -26,10 +26,29 @@ DOWN = (0, 1)
 LEFT = (-1, 0)
 RIGHT = (1, 0)
 
-# Словарь управления движениями, это делает код ко
+# Словарь управления движениями, это делает код компактным!
 MOVEMENT_KEYS = {
     pg.K_UP: UP,
     pg.K_DOWN: DOWN,
     pg.K_LEFT: LEFT,
     pg.K_RIGHT: RIGHT,
 }
+
+
+# Глобальные переменные
+score = 0
+screen = pg.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+clock = pg.time.Clock()
+
+pg.init()
+
+FONT = pg.font.Font(None, 24)
+
+INSTRUCTION_TEXT = [
+    "+-----------------+",
+    "    Score: {}",
+    "+-----------------+",
+    "> Движение - клавиши стрелок",
+    "> Выход из игры - клавиша Esc",
+    "> Яблоки - красные",
+    "> Отрава - синяя",
