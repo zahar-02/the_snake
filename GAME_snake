@@ -263,3 +263,11 @@ if apples_eaten % 5 == 0:
                 if bomb is not None:
                     bomb.randomize_position(occupied_cells)
                 bombs.append(bomb)
+draw_game_area(snake, apple, bombs)
+        draw_info_area(score)
+
+        pg.display.flip()
+        clock.tick(1000 // frame_delay)
+
+
+if __name__ == "__main__":
