@@ -143,4 +143,14 @@ class Apple(GameObject):
     def draw(self):
         """Отрисовка на игровом поле"""
         self.draw_cell(self.position)
+def clear(self):
+        """Удаление с игрового поля"""
+        self.draw_cell(self.position, color=BOARD_BACKGROUND_COLOR)
+
+    def randomize_position(self, occupied_cells):
+        """Генерация объекта на случайной позиции"""
+        self.position = (random.randint(0, GRID_WIDTH - 1),
+                         random.randint(0, GRID_HEIGHT - 1))
+        while self.position in occupied_cells:
+            self.position = (random.randint(0, GRID_WIDTH - 1),
 
