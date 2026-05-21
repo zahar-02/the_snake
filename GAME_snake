@@ -110,3 +110,13 @@ def move(self):
 else:
             self.grow = False
 # сбрасываем рост
+def draw(self):
+        """Отрисовка на игровом поле"""
+        for segment in self.positions:
+            self.draw_cell(segment)
+
+    def update_direction(self, new_direction):
+        """Смена направления движения змейки"""
+        if (-new_direction[0], -new_direction[1]) != self.direction:
+            self.direction = new_direction
+
