@@ -119,4 +119,28 @@ def draw(self):
         """Смена направления движения змейки"""
         if (-new_direction[0], -new_direction[1]) != self.direction:
             self.direction = new_direction
+    def reset(self):
+        """Сброс параметров змейки"""
+        self.positions = [(GRID_WIDTH // 2, GRID_HEIGHT // 2)]
+        self.direction = RIGHT
+
+    def get_head_position(self):
+        """Получить позицию головы змейки"""
+        return self.positions[0]
+
+    def length(self):
+        """Получить длину змейки"""
+        return len(self.positions)
+
+
+class Apple(GameObject):
+    """Наследуемый класс яблока"""
+
+    def __init__(self, body_color=RED):
+        super().__init__(body_color)
+        self.position = None
+
+    def draw(self):
+        """Отрисовка на игровом поле"""
+        self.draw_cell(self.position)
 
