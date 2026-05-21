@@ -153,4 +153,16 @@ def clear(self):
                          random.randint(0, GRID_HEIGHT - 1))
         while self.position in occupied_cells:
             self.position = (random.randint(0, GRID_WIDTH - 1),
+random.randint(0, GRID_HEIGHT - 1))
+def draw_game_area(snake, apple, bombs):
+    """Игровое поле"""
+    screen.fill(BOARD_BACKGROUND_COLOR)
+    for segment in snake.positions:
+        snake.draw_cell(segment)
+    for bomb in bombs:
+        bomb.draw()
+
+    if apple.position is not None:
+        apple.draw()
+
 
